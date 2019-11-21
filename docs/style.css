@@ -1,0 +1,93 @@
+@import url("https://fonts.googleapis.com/css?family=Raleway:500,700&display=swap");
+
+body {
+    margin: 0px;
+    padding: 0px;
+    font-size: 1.5vw;
+    line-height: 1.6;
+    letter-spacing: 0.05rem;
+    font-family: "Raleway", Sans-serif;
+
+}
+
+select {
+    background: white;
+    border-color: rgba(61, 59, 80, 1);
+    width: 50%;
+    height: 10%;
+    text-align: center;
+    border-width: 0.2vw;
+    cursor: pointer;
+    color: rgba(61, 59, 80, 1);
+    outline: none;
+    font-size: 2vw;
+
+}
+
+select option {
+    margin: 40px;
+    background: white;
+    color: rgba(61, 59, 80, 1);
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
+    border-style: dotted;
+}
+
+select:active,
+select:hover {
+    outline: none
+}
+
+
+
+.container {
+    height: 100vh;
+    width: 100vw;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+}
+
+.nav {
+    width: 40%;
+    height: 100%;
+    box-sizing: border-box;
+    background-image: linear-gradient(rgba(61, 59, 80, 1), rgba(125, 91, 140, 0.1978), white);
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.txtnav {
+    color: white;
+    font-size: 2.6vw;
+    margin: 0%;
+    padding: 5%;
+
+}
+
+.city {
+    margin-bottom: 40%;
+}
+
+
+.description {
+    width: 60%;
+    height: 100%;
+    box-sizing: border-box;
+    background-image: url(img/mountains.jpeg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.txt {
+    color: white;
+    font-size: 2.6vw;
+    margin: 0%;
+}
