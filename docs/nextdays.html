@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link id="css_file" rel="stylesheet" type="text/css" href="style.css" />
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    <title>Next Days Weather</title>
+    <script src="./bundle.js" async></script>
+</head>
+
+<body>
+    <div id="root"></div>
+    <div id="root"></div>
+    <div class="container">
+        <div class="nav">
+            <div class="firstsentence">Welcome,<b> Sailor!</b></div>
+            <div style="font-size: 2vw;" class="txtnav">
+                Which lake do you want to explore?
+            </div>
+            <div class="dropdown">
+                <button class="dropbtn"><span style="font-size: 2vw;">Lake: </span><input class="input" value=""
+                        autocomplete="off" type="text" name="LakeName"></button>
+                <div class="dropdown-content">
+                    <a href="#">Kisajno</a>
+                    <a href="#">Warnołty</a>
+                    <a href="#">Jeziorak</a>
+                    <a href="#">Piłakno</a>
+                    <a href="#">Krutyńskie</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="widgetcontainer">
+            <div class="widget">
+                <div class="widgetcontent">
+                    <div class="currenttemperature">Kisajno</div>
+                    <div class="currenttemperature"> 8°C</div>
+                </div>
+                <div class="widgetcontent" style="height: 8%; font-size: 1.2vw;">
+                    <div class="temperature">Wind: 30km/h</div>
+                    <div class="temperature"><i class='fas fa-cloud-showers-heavy'
+                            style='font-size:6vw; color: rgb(252, 184, 48); margin-top: 10%;'></i></div>
+                </div>
+                <div class="widgetcontent" style="height: 8%; margin-right: 12%;">
+                    <div class="temperature" id="sun" style="font-size: 1.2vw;">Sunset: 7:53 </br>Sunrise: 15:58</div>
+                </div>
+                <div class="widgetcontent">
+                    <div class="temperature">Mon</div>
+                    <div class="temperature"><i class='fas fa-cloud-rain' style='font-size:3vw'></i></div>
+                    <div class="temperature"> 8°C</div>
+                </div>
+                <div class="widgetcontent">
+                    <div class="temperature">Tue</div>
+                    <div class="temperature"><i class='fas fa-cloud-sun' style='font-size:3vw'></i></div>
+                    <div class="temperature"> 8°C</div>
+                </div>
+                <div class="widgetcontent">
+                    <div class="temperature">Wed</div>
+                    <div class="temperature"><i class='fas fa-cloud-sun' style='font-size:3vw'></i></div>
+                    <div class="temperature"> 8°C</div>
+                </div>
+                <div class="widgetcontent">
+                    <div class="temperature">Thu</div>
+                    <div class="temperature"><i class='fas fa-cloud-moon' style='font-size:3vw'></i></div>
+                    <div class="temperature">6°C</div>
+                </div>
+                <div class="widgetcontent">
+                    <div class="temperature">Fri</div>
+                    <div class="temperature"><i class='fas fa-cloud-moon-rain' style='font-size:3vw'></i></div>
+                    <div class="temperature"> 3°C</div>
+                </div>
+                <div class="widgetcontent" style="height: 5%; font-size: 1.2vw;">
+
+                    <div class="temperature"><i class="fas fa-arrow-left"></i></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</body>
+
+</body>
+
+</html>
