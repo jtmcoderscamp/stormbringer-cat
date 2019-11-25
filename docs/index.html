@@ -6,6 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
 	<link id="css_file" rel="stylesheet" type="text/css" href="style.css" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
 	<title>Top Weather</title>
 	<script src="./bundle.js" async></script>
 </head>
@@ -14,24 +15,31 @@
 	<div id="root"></div>
 	<div class="container">
 		<div class="nav">
-			<div class="txtnav">Welcome, Wanderer!</div>
-			<div style="font-size: 2vw;" class="txtnav">Which peak do you want to climb to?</div>
-			<select class="city">
-				<option value="Giewont">Giewont</option>
-				<option value="Kasprowy Wierch">Kasprowy Wierch</option>
-				<option value="Świnica">Świnica</option>
-				<option value="Sarnia Skała">Sarnia Skała</option>
-				<option value="Rysy">Rysy</option>
-				<option valueR="Morskie Oko">Morskie Oko</option>
-			</select>
+			<div class="firstsentence">Welcome,<b> Sailor!</b></div>
+			<div style="font-size: 2vw;" class="txtnav">
+				Which lake do you want to explore?
+			</div>
+			<div class="dropdown">
+				<button class="dropbtn"><span style="font-size: 2vw;">Lake: </span><input class="input" value=""
+						autocomplete="off" type="text" name="FirstName"></button>
+				<div class="dropdown-content">
+					<a href="#">Kisajno</a>
+					<a href="#">Warnołty</a>
+					<a href="#">Jeziorak</a>
+					<a href="#">Piłakno</a>
+					<a href="#">Krutyńskie</a>
+				</div>
+			</div>
 		</div>
+
+
 		<div class="description">
-			<p class="txt">Choose your destination and check the weather in Zakopane, and on the top of the Tatra
-				mountains
+			<p class="txt">
+				Choose your destination and check the weather in the beatiful area of
+				<b style="color: rgb(253, 175, 17);">Mazury</b> lakes
 			</p>
 		</div>
 	</div>
-
 </body>
 
 </html>
