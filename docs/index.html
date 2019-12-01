@@ -1,13 +1,187 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
-		<title>JS project template</title>
-		<script src="./bundle.js" async></script>
-	</head>
-	<body>
-		<div id="root"></div>
-	</body>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link id="css_file" rel="stylesheet" type="text/css" href="style.css" />
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    <title>Weather</title>
+    <script src="./bundle.js" async></script>
+</head>
+
+<body>
+    <div id="root"></div>
+    <div class="container">
+        <div class="nav">
+            <div class="firstsentence">Welcome,<b> Sailor!</b></div>
+            <div style="font-size: 2vw;" class="txtnav">
+                Which lake do you want to explore?
+            </div>
+
+            <select class="lakes">
+                <option value="lat=54.06592&lon=21.701493">Kisajno</option>
+                <option value="lat=53.712741&lon=21.633747">Warnołty</option>
+                <option value="lat=53.649835&lon=19.57533">Jeziorak</option>
+                <option value="lat=53.787905&lon=21.161813">Piłakno</option>
+                <option value="lat=53.704958&lon=21.432507">Krutyńskie</option>
+            </select>
+        </div>
+
+
+        <div class="widgetcontainer">
+            <div class="widget">
+                <div class="widgetcontent">
+                    <div class="currenttempeurerat">Kisajno</div>
+                    <div class="currenttemperature"> 8°C</div>
+                </div>
+                <div class="widgetcontent" style="height: 8%; font-size: 1.2vw;">
+                    <div class="wind">Wind: 30km/h</div>
+                    <div class="temperature"><i class='fas fa-cloud-showers-heavy'
+                            style='font-size:6vw; color: rgb(252, 184, 48); margin-top: 10%;'></i></div>
+                </div>
+                <div class="widgetcontent" style="height: 8%; margin-right: 12%;">
+                    <div class="temperature" id="sun" style="font-size: 1.2vw;">Sunset: 7:53 </br>Sunrise: 15:58</div>
+                </div>
+                <div class="widgetcontent">
+                    <div class="temperature">8:00</div>
+                    <div class="temperature"><i class='fas fa-cloud-rain' style='font-size:3vw'></i></div>
+                    <div class="temperature"> 8°C</div>
+                </div>
+                <div class="widgetcontent">
+                    <div class="temperature">12:00</div>
+                    <div class="temperature"><i class='fas fa-cloud-sun' style='font-size:3vw'></i></div>
+                    <div class="temperature"> 8°C</div>
+                </div>
+                <div class="widgetcontent">
+                    <div class="temperature">16:00</div>
+                    <div class="temperature"><i class='fas fa-cloud-sun' style='font-size:3vw'></i></div>
+                    <div class="temperature"> 8°C</div>
+                </div>
+                <div class="widgetcontent">
+                    <div class="temperature">20:00</div>
+                    <div class="temperature"><i class='fas fa-cloud-moon' style='font-size:3vw'></i></div>
+                    <div class="temperature">6°C</div>
+                </div>
+                <div class="widgetcontent">
+                    <div class="temperature">00:00</div>
+                    <div class="temperature"><i class='fas fa-cloud-moon-rain' style='font-size:3vw'></i></div>
+                    <div class="temperature"> 3°C</div>
+				</div>
+				
+				<!--
+                <div class="widgetcontent" style="height: 5%; font-size: 1.2vw;">
+                    <div class="temperature">Next days</div>
+                    <div class="temperature" style="margin-left: 10%;"><i class="fas fa-arrow-right"></i></div>
+				</div>
+			-->
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <script>
+
+        const city = document.querySelector('.lakes');
+        city.addEventListener('change', check);
+
+        // check Kisajno od razu 
+        check();
+
+        function check() {
+            let place;
+            switch (city.value) {
+                case 'lat=54.06592&lon=21.701493':
+                    place = 'Kisajno';
+                    break;
+                case 'lat=53.712741&lon=21.633747':
+                    place = 'Warnołty'
+                    break;
+                case 'lat=53.649835&lon=19.57533':
+                    place = 'Jeziorak'
+                    break;
+                case 'lat=53.787905&lon=21.161813':
+                    place = 'Piłakno'
+                    break;
+                case 'lat=53.704958&lon=21.432507':
+                    place = 'Krutyńskie'
+                    break;
+            }
+
+            //  alert('You choose weather for the ' + place +' lake.');
+
+            fn(city.value);
+
+            function fn(location) {
+                const apiKey = '&appid=b10515d6a4ef2b8b8a8a304e2cff855e';
+                const checkToday = 'https://api.openweathermap.org/data/2.5/weather?';
+                const checkHours = 'https://api.openweathermap.org/data/2.5/forecast?';
+
+                fetch(checkToday + location + apiKey).then(blob => blob.json()).then(data => {
+                    changeToday(data, place);
+                });
+
+                fetch(checkHours + location + apiKey).then(blob => blob.json()).then(data => {
+                    changeHours(data, place);
+                });
+                //trzeci fetch pogoda np. kilkudniowa
+
+            }
+        }
+
+        function changeToday(data, place) {
+            const lake = document.querySelector('.currenttempeurerat');
+            lake.innerHTML = (place);
+            const temperature = document.querySelector('.currenttemperature');
+            temperature.innerHTML = Math.round(data.main.temp - 273) + '°C';
+            const wind = document.querySelector('.wind');
+            wind.innerHTML = 'Wind: ' + data.wind.speed + ' km/h';
+            // console.log(data);
+            //trzeba zmienić jeszcze chmurke
+
+        }
+
+        function changeHours(data) {
+            const futureThree = document.querySelectorAll('.widgetcontent')[3];
+            futureThree.firstElementChild.innerHTML = getTime(data.list['0'].dt_txt);
+            //zmiana chmurki
+            futureThree.lastElementChild.innerHTML = Math.round(data.list['0'].main.temp - 273) + '°C';
+
+            const futureSix = document.querySelectorAll('.widgetcontent')[4];
+            futureSix.firstElementChild.innerHTML = getTime(data.list['1'].dt_txt);
+            //zmiana chmurki
+            futureSix.lastElementChild.innerHTML = Math.round(data.list['1'].main.temp - 273) + '°C';
+
+            const futureNine = document.querySelectorAll('.widgetcontent')[5];
+            futureNine.firstElementChild.innerHTML = getTime(data.list['2'].dt_txt);
+            //zmiana chmurki
+            futureNine.lastElementChild.innerHTML = Math.round(data.list['2'].main.temp - 273) + '°C';
+
+            const futureTwelve = document.querySelectorAll('.widgetcontent')[6];
+            futureTwelve.firstElementChild.innerHTML = getTime(data.list['3'].dt_txt);
+            //zmiana chmurki
+            futureTwelve.lastElementChild.innerHTML = Math.round(data.list['3'].main.temp - 273) + '°C';
+
+            const futureFifteen = document.querySelectorAll('.widgetcontent')[7];
+            futureFifteen.firstElementChild.innerHTML = getTime(data.list['4'].dt_txt);
+            //zmiana chmurki
+            futureFifteen.lastElementChild.innerHTML = Math.round(data.list['4'].main.temp - 273) + '°C';
+
+            // console.log(data);
+
+        }
+
+        function getTime(time) {
+            const t = time.split(' ');
+            const hm = t[1].split(':');
+            return hm[0] + ':' + hm[1];
+        }
+
+
+    </script>
+
+</body>
+
 </html>
