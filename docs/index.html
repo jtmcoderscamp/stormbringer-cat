@@ -4,10 +4,73 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
-		<title>JS project template</title>
-		<script src="./bundle.js" async></script>
+		<title>Weather</title>
+		<script src='https://kit.fontawesome.com/a076d05399.js'></script>
+		<link id="css_file" rel="stylesheet" type="text/css" href="style.css" /> 
+		<!--<script type="text/javascript" src="index.js"></script> -->
 	</head>
 	<body>
 		<div id="root"></div>
+		<div id="root"></div>
+		<div class="container">
+			<div class="nav">
+				<div class="firstsentence">Welcome,<b> Sailor!</b></div>
+				<div style="font-size: 2vw;" class="txtnav">
+					Which lake do you want to explore?
+				</div>
+	
+				<select class="lakes">
+					<option value="lat=54.06592&lon=21.701493">Kisajno</option>
+					<option value="lat=53.712741&lon=21.633747">Warnołty</option>
+					<option value="lat=53.649835&lon=19.57533">Jeziorak</option>
+					<option value="lat=53.787905&lon=21.161813">Piłakno</option>
+					<option value="lat=53.704958&lon=21.432507">Krutyńskie</option>
+				</select>
+			</div>
+	
+	
+			<div class="widgetcontainer">
+				<div class="widget">
+					<div class="widgetcontent">
+						<div class="currenttempeurerat">Something went wrong</div>
+						<div class="currenttemperature"> No data</div>
+					</div>
+					<div class="widgetcontent" style="height: 8%; font-size: 1.2vw;">
+						<div class="wind">No data</div>
+						<div class="temperature"><i class='fas fa-cloud-showers-heavy'
+								style='font-size:6vw; color: rgb(252, 184, 48); margin-top: 10%;'></i></div>
+					</div>
+					<div class="widgetcontent" style="height: 8%; margin-right: 12%;">
+						<div class="sunset" id="sun" style="font-size: 1.2vw;">Sunset: No data </br>Sunrise: No data</div>
+					</div>
+					<div class="widgetcontent">
+						<div class="temperature">No data</div>
+						<div class="temperature"><i class='fas fa-cloud-rain' style='font-size:3vw'></i></div>
+						<div class="temperature">No data</div>
+					</div>
+					<div class="widgetcontent">
+						<div class="temperature">No data</div>
+						<div class="temperature"><i class='fas fa-cloud-sun' style='font-size:3vw'></i></div>
+						<div class="temperature">No data</div>
+					</div>
+					<div class="widgetcontent">
+						<div class="temperature">No data</div>
+						<div class="temperature"><i class='fas fa-cloud-sun' style='font-size:3vw'></i></div>
+						<div class="temperature">No data</div>
+					</div>
+					<div class="widgetcontent">
+						<div class="temperature">No data</div>
+						<div class="temperature"><i class='fas fa-cloud-moon' style='font-size:3vw'></i></div>
+						<div class="temperature">No data</div>
+					</div>
+					<div class="widgetcontent">
+						<div class="temperature">No data</div>
+						<div class="temperature"><i class='fas fa-cloud-moon-rain' style='font-size:3vw'></i></div>
+						<div class="temperature">No data</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="./bundle.js" async></script>
 	</body>
 </html>
