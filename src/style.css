@@ -48,7 +48,7 @@ body {
   width: 60%;
   height: 100%;
   box-sizing: border-box;
- /* background-image: url(mazury.jpeg); */
+ /* background-image: url(mazury.jpg); */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -120,7 +120,7 @@ body {
   width: 60%;
   height: 100%;
   box-sizing: border-box;
- /* background-image: url(img/weather.jpeg); */
+ /*background-image: url(img/weather.jpg); */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
