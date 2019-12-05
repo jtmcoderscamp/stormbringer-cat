@@ -4,7 +4,8 @@
  */
 
 //console.log("...");
-
+//import ".style.css";
+require('./style.css');
 
 const city = document.querySelector('.lakes');
 city.addEventListener('click', check);

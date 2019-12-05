@@ -48,7 +48,7 @@ body {
   width: 60%;
   height: 100%;
   box-sizing: border-box;
-  background-image: url(mazury.jpeg);
+ /* background-image: url(mazury.jpeg); */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -120,7 +120,7 @@ body {
   width: 60%;
   height: 100%;
   box-sizing: border-box;
-  background-image: url(img/weather.jpeg);
+ /* background-image: url(img/weather.jpeg); */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -166,6 +166,16 @@ body {
 }
 
 .temperature {
+  height: 100%;
+  width: 30%;
+  color: rgba(37, 106, 134, 1);
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sunset {
   height: 100%;
   width: 30%;
   color: rgba(37, 106, 134, 1);
