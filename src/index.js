@@ -31,6 +31,9 @@ function check() {
         case 'lat=53.704958&lon=21.432507':
             place = 'Krutyńskie'
             break;
+            case "lat=53.767253&lon=21.733089":
+                place = 'Śniardwy'
+                break;
     }
 
     //  alert('You choose weather for the ' + place +' lake.');
