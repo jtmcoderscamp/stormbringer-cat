@@ -1,3 +1,34 @@
+README
+
+## Below app description is specification how to use this repository. And how to run this project.
+
+# Weather app for sailors
+ This web app was developed across two weeks for educational purposes.
+Version 1.0.0 of this app is mostly using external API. It was one of the main educational purpose.
+##  Current main features include:
+- display of weather data from OpenWeatherMapAPI, based on list with few lakes in Poland
+## Technologies used in this project
+- JavaScript
+- HTML 5
+- CSS 3
+## In the future version we are planning to add:
+- localization based on GPS
+- localization based on IP 
+- additional animations
+- weather for the next days
+- additional information about wind and wind direction
+ 
+ 
+# Project structure:
+The repository consists of two main branches:
+master - the "production" branch from which the github pages demo of the application can be accessed
+develop - the development branch. This branch aggregates the pull requests from working branches
+All files are contained in two folders: /src (source files) and /docs (output folder). Most contents of the latter are loaded from /src folder using webpack.
+
+
+
+
+
 # template project
 
 ## WHEN FIRST ACCESSING THE REPOSITORY:
